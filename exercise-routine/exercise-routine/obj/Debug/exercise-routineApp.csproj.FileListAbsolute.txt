@@ -1,0 +1,14 @@
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise-routineApp.csproj.AssemblyReference.cache
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise_routine.AddEditForm.resources
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise_routine.MainForm.resources
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise_routine.Properties.Resources.resources
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise-routineApp.csproj.GenerateResource.cache
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise-routineApp.csproj.CoreCompileInputs.cache
+E:\C#\exercise-routine\exercise-routine\bin\Debug\exercise-routine.exe.config
+E:\C#\exercise-routine\exercise-routine\bin\Debug\exercise-routine.exe
+E:\C#\exercise-routine\exercise-routine\bin\Debug\exercise-routine.pdb
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise-routine.exe
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise-routine.pdb
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise-routine.exe.config
+E:\C#\exercise-routine\exercise-routine\bin\Debug\MaterialSkin.dll
+E:\C#\exercise-routine\exercise-routine\obj\Debug\exercise.7CB2840C.Up2Date

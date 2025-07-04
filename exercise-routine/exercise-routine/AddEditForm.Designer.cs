@@ -40,64 +40,71 @@
             // 
             // exerciseName
             // 
-            this.exerciseName.Location = new System.Drawing.Point(97, 53);
+            this.exerciseName.Location = new System.Drawing.Point(169, 76);
             this.exerciseName.Name = "exerciseName";
             this.exerciseName.Size = new System.Drawing.Size(121, 21);
             this.exerciseName.TabIndex = 0;
+            this.exerciseName.Text = "입력하세요";
+            this.exerciseName.Enter += new System.EventHandler(this.exerciseName_Enter);
             // 
             // sets
             // 
-            this.sets.Location = new System.Drawing.Point(97, 106);
+            this.sets.Location = new System.Drawing.Point(169, 129);
             this.sets.Name = "sets";
             this.sets.Size = new System.Drawing.Size(121, 21);
             this.sets.TabIndex = 1;
+            this.sets.Text = "세트";
             // 
             // reps
             // 
-            this.reps.Location = new System.Drawing.Point(97, 133);
+            this.reps.Location = new System.Drawing.Point(169, 156);
             this.reps.Name = "reps";
             this.reps.Size = new System.Drawing.Size(121, 21);
             this.reps.TabIndex = 2;
+            this.reps.Text = "횟수";
             // 
             // weight
             // 
-            this.weight.Location = new System.Drawing.Point(97, 160);
+            this.weight.Location = new System.Drawing.Point(169, 183);
             this.weight.Name = "weight";
             this.weight.Size = new System.Drawing.Size(121, 21);
             this.weight.TabIndex = 3;
+            this.weight.Text = "무게";
             // 
             // cmbPart
             // 
             this.cmbPart.FormattingEnabled = true;
-            this.cmbPart.Location = new System.Drawing.Point(97, 80);
+            this.cmbPart.Location = new System.Drawing.Point(169, 103);
             this.cmbPart.Name = "cmbPart";
             this.cmbPart.Size = new System.Drawing.Size(121, 20);
             this.cmbPart.TabIndex = 4;
+            this.cmbPart.Enter += new System.EventHandler(this.exerciseName_Enter);
             // 
             // todayDate
             // 
-            this.todayDate.Location = new System.Drawing.Point(97, 187);
+            this.todayDate.Location = new System.Drawing.Point(169, 210);
             this.todayDate.Name = "todayDate";
             this.todayDate.Size = new System.Drawing.Size(163, 21);
             this.todayDate.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(116, 241);
+            this.btnSave.Location = new System.Drawing.Point(188, 264);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "button1";
+            this.btnSave.Text = "추가";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // memo
             // 
-            this.memo.Location = new System.Drawing.Point(97, 214);
+            this.memo.Location = new System.Drawing.Point(169, 237);
             this.memo.Multiline = true;
             this.memo.Name = "memo";
             this.memo.Size = new System.Drawing.Size(121, 21);
             this.memo.TabIndex = 7;
+            this.memo.Text = "기록";
             // 
             // AddEditForm
             // 
@@ -113,7 +120,7 @@
             this.Controls.Add(this.sets);
             this.Controls.Add(this.exerciseName);
             this.Name = "AddEditForm";
-            this.Text = "Form1";
+            this.Text = "기록 추가";
             this.ResumeLayout(false);
             this.PerformLayout();
 
