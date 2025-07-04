@@ -19,7 +19,25 @@ namespace exercise_routine
         {
             InitializeComponent();
             cmbPart.Items.AddRange(new string[] { "가슴", "등", "하체", "어깨", "팔", "복근" });
+            cmbPart.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPart.SelectedIndex = 0; // 기본값으로 첫 번째 항목 선택
+
+            exerciseName.TabIndex = 0;
+            cmbPart.TabIndex = 1;
+            sets.TabIndex = 2;
+            reps.TabIndex = 3;
+            weight.TabIndex = 4;
+            todayDate.TabIndex = 5;
+            memo.TabIndex = 6;
+            btnSave.TabIndex = 7;
+
+            SetPlaceholder(exerciseName, "운동명");
+            SetPlaceholder(sets, "세트 수");
+            SetPlaceholder(reps, "반복 수");
+            SetPlaceholder(weight, "무게 (kg)");
+            SetPlaceholder(memo, "기록 메모");
+
+            todayDate.Enter += (s, e) => SendKeys.Send("%{DOWN}");
 
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
@@ -29,6 +47,33 @@ namespace exercise_routine
                 Primary.Blue200, Accent.Orange700,
                 TextShade.WHITE
             );
+        }
+        private void SetPlaceholder(TextBox textbox, string placeholder)
+        {
+            textbox.Text = placeholder;
+            textbox.ForeColor = Color.Gray;
+            SetPlaceholderEvents(textbox, placeholder);
+        }
+
+        private void SetPlaceholderEvents(TextBox textbox, string placeholder)
+        {
+            textbox.Enter += (s, e) =>
+            {
+                if (textbox.Text == placeholder)
+                {
+                    textbox.Text = "";
+                    textbox.ForeColor = Color.Black;
+                }
+            };
+
+            textbox.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textbox.Text))
+                {
+                    textbox.Text = placeholder;
+                    textbox.ForeColor = Color.Gray;
+                }
+            };
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -64,11 +109,6 @@ namespace exercise_routine
             
             this.DialogResult = DialogResult.OK;
             this.Close();
-        }
-
-        private void exerciseName_Enter(object sender, EventArgs e)
-        {
-            exerciseName.Text = "운동이름";
         }
     }
 }

@@ -44,8 +44,7 @@
             this.exerciseName.Name = "exerciseName";
             this.exerciseName.Size = new System.Drawing.Size(121, 21);
             this.exerciseName.TabIndex = 0;
-            this.exerciseName.Text = "입력하세요";
-            this.exerciseName.Enter += new System.EventHandler(this.exerciseName_Enter);
+            this.exerciseName.Text = "운동명";
             // 
             // sets
             // 
@@ -78,7 +77,6 @@
             this.cmbPart.Name = "cmbPart";
             this.cmbPart.Size = new System.Drawing.Size(121, 20);
             this.cmbPart.TabIndex = 4;
-            this.cmbPart.Enter += new System.EventHandler(this.exerciseName_Enter);
             // 
             // todayDate
             // 
