@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\exercise-routine",
-    "\\exercise-routine\\exercise-routine"
+    "\\exercise-routine"
   ],
-  "SelectedNode": "\\exercise-routine\\exercise-routine\\AddEditForm.Designer.cs",
+  "SelectedNode": "\\exercise-routine\\exercise-routine.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -36,86 +36,106 @@
             this.todayDate = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.memo = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // exerciseName
             // 
-            this.exerciseName.Location = new System.Drawing.Point(97, 53);
+            this.exerciseName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.exerciseName.Location = new System.Drawing.Point(108, 8);
             this.exerciseName.Name = "exerciseName";
-            this.exerciseName.Size = new System.Drawing.Size(121, 21);
+            this.exerciseName.Size = new System.Drawing.Size(132, 21);
             this.exerciseName.TabIndex = 0;
             // 
             // sets
             // 
-            this.sets.Location = new System.Drawing.Point(97, 106);
+            this.sets.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.sets.Location = new System.Drawing.Point(108, 61);
             this.sets.Name = "sets";
-            this.sets.Size = new System.Drawing.Size(121, 21);
+            this.sets.Size = new System.Drawing.Size(132, 21);
             this.sets.TabIndex = 1;
             // 
             // reps
             // 
-            this.reps.Location = new System.Drawing.Point(97, 133);
+            this.reps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.reps.Location = new System.Drawing.Point(108, 88);
             this.reps.Name = "reps";
-            this.reps.Size = new System.Drawing.Size(121, 21);
+            this.reps.Size = new System.Drawing.Size(132, 21);
             this.reps.TabIndex = 2;
             // 
             // weight
             // 
-            this.weight.Location = new System.Drawing.Point(97, 160);
+            this.weight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.weight.Location = new System.Drawing.Point(108, 115);
             this.weight.Name = "weight";
-            this.weight.Size = new System.Drawing.Size(121, 21);
+            this.weight.Size = new System.Drawing.Size(132, 21);
             this.weight.TabIndex = 3;
             // 
             // cmbPart
             // 
+            this.cmbPart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cmbPart.FormattingEnabled = true;
-            this.cmbPart.Location = new System.Drawing.Point(97, 80);
+            this.cmbPart.Location = new System.Drawing.Point(108, 35);
             this.cmbPart.Name = "cmbPart";
-            this.cmbPart.Size = new System.Drawing.Size(121, 20);
+            this.cmbPart.Size = new System.Drawing.Size(132, 20);
             this.cmbPart.TabIndex = 4;
             // 
             // todayDate
             // 
-            this.todayDate.Location = new System.Drawing.Point(97, 187);
+            this.todayDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.todayDate.Location = new System.Drawing.Point(108, 142);
             this.todayDate.Name = "todayDate";
-            this.todayDate.Size = new System.Drawing.Size(163, 21);
+            this.todayDate.Size = new System.Drawing.Size(174, 21);
             this.todayDate.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(116, 241);
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSave.Location = new System.Drawing.Point(120, 225);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(108, 23);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "button1";
+            this.btnSave.Text = "추가";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // memo
             // 
-            this.memo.Location = new System.Drawing.Point(97, 214);
+            this.memo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.memo.Location = new System.Drawing.Point(108, 169);
             this.memo.Multiline = true;
             this.memo.Name = "memo";
-            this.memo.Size = new System.Drawing.Size(121, 21);
+            this.memo.Size = new System.Drawing.Size(132, 50);
             this.memo.TabIndex = 7;
+            this.memo.Text = "추가메모";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.memo);
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.todayDate);
+            this.panel1.Controls.Add(this.cmbPart);
+            this.panel1.Controls.Add(this.weight);
+            this.panel1.Controls.Add(this.reps);
+            this.panel1.Controls.Add(this.sets);
+            this.panel1.Controls.Add(this.exerciseName);
+            this.panel1.Location = new System.Drawing.Point(6, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(381, 262);
+            this.panel1.TabIndex = 8;
             // 
             // AddEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 310);
-            this.Controls.Add(this.memo);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.todayDate);
-            this.Controls.Add(this.cmbPart);
-            this.Controls.Add(this.weight);
-            this.Controls.Add(this.reps);
-            this.Controls.Add(this.sets);
-            this.Controls.Add(this.exerciseName);
+            this.ClientSize = new System.Drawing.Size(390, 332);
+            this.Controls.Add(this.panel1);
             this.Name = "AddEditForm";
-            this.Text = "Form1";
+            this.Text = "추가 기록";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -129,5 +149,6 @@
         private System.Windows.Forms.DateTimePicker todayDate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox memo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
