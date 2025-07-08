@@ -71,5 +71,26 @@ namespace exercise_routine
                 RefreshGrid();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (routineList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("삭제할 항목을 선택하세요.");
+                return;
+            }
+
+            int selectedIndex = routineList.SelectedRows[0].Index;
+            if (selectedIndex < 0 || selectedIndex >= workouts.Count) return;
+
+            // 사용자에게 확인받기
+            var result = MessageBox.Show("정말 삭제하시겠습니까?", "확인", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                workouts.RemoveAt(selectedIndex);
+                RefreshGrid();
+                MessageBox.Show("삭제되었습니다.");
+            }
+        }
     }
 }

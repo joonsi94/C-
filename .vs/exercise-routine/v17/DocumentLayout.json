@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "E:\\C#\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\addeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|e:\\c#\\exercise-routine\\addeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\addeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,20 +19,12 @@
       "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\AddEditForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\MainForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\addeditform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\addeditform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\MainForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\MainForm.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|e:\\c#\\exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|e:\\c#\\exercise-routine\\addeditform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\addeditform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "mainForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.cs",
@@ -51,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AddEditForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\AddEditForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\AddEditForm.cs",
@@ -68,46 +68,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AddEditForm.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\AddEditForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\AddEditForm.cs",
               "ToolTip": "E:\\C#\\exercise-routine\\AddEditForm.cs",
               "RelativeToolTip": "exercise-routine\\AddEditForm.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAUwJQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAUwJQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T08:22:37.343Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "mainForm.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.cs",
               "ToolTip": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeToolTip": "exercise-routine\\MainForm.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAApwB4AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAMwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T07:48:29.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "mainForm.Designer.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.Designer.cs",
               "ToolTip": "E:\\C#\\exercise-routine\\MainForm.Designer.cs",
               "RelativeToolTip": "exercise-routine\\MainForm.Designer.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAgwHcAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAgwL8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T09:05:31.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "AddEditForm.Designer.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\AddEditForm.Designer.cs",
               "RelativeDocumentMoniker": "exercise-routine\\AddEditForm.Designer.cs",
