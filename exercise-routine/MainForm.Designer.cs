@@ -34,10 +34,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.routineList = new System.Windows.Forms.DataGridView();
             this.routineName = new System.Windows.Forms.Label();
-            this.todayRoutineCount = new MaterialSkin.Controls.MaterialLabel();
-            this.everySetCount = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.todayTotalCount = new MaterialSkin.Controls.MaterialLabel();
+            this.totalSet = new MaterialSkin.Controls.MaterialLabel();
+            this.totalWeight = new MaterialSkin.Controls.MaterialLabel();
+            this.partCount = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.routineList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,71 +104,71 @@
             this.routineName.TabIndex = 5;
             this.routineName.Text = "운동루틴목록";
             // 
-            // todayRoutineCount
+            // todayTotalCount
             // 
-            this.todayRoutineCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.todayTotalCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.todayRoutineCount.AutoSize = true;
-            this.todayRoutineCount.Depth = 0;
-            this.todayRoutineCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.todayRoutineCount.Location = new System.Drawing.Point(345, 105);
-            this.todayRoutineCount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.todayRoutineCount.Name = "todayRoutineCount";
-            this.todayRoutineCount.Size = new System.Drawing.Size(81, 19);
-            this.todayRoutineCount.TabIndex = 6;
-            this.todayRoutineCount.Text = "오늘 루틴 수 : ";
+            this.todayTotalCount.AutoSize = true;
+            this.todayTotalCount.Depth = 0;
+            this.todayTotalCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.todayTotalCount.Location = new System.Drawing.Point(345, 105);
+            this.todayTotalCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.todayTotalCount.Name = "todayTotalCount";
+            this.todayTotalCount.Size = new System.Drawing.Size(81, 19);
+            this.todayTotalCount.TabIndex = 6;
+            this.todayTotalCount.Text = "오늘 루틴 수 : ";
             // 
-            // everySetCount
+            // totalSet
             // 
-            this.everySetCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.totalSet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.everySetCount.AutoSize = true;
-            this.everySetCount.Depth = 0;
-            this.everySetCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.everySetCount.Location = new System.Drawing.Point(345, 154);
-            this.everySetCount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.everySetCount.Name = "everySetCount";
-            this.everySetCount.Size = new System.Drawing.Size(69, 19);
-            this.everySetCount.TabIndex = 7;
-            this.everySetCount.Text = "총 세트 수 : ";
+            this.totalSet.AutoSize = true;
+            this.totalSet.Depth = 0;
+            this.totalSet.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.totalSet.Location = new System.Drawing.Point(345, 154);
+            this.totalSet.MouseState = MaterialSkin.MouseState.HOVER;
+            this.totalSet.Name = "totalSet";
+            this.totalSet.Size = new System.Drawing.Size(69, 19);
+            this.totalSet.TabIndex = 7;
+            this.totalSet.Text = "총 세트 수 : ";
             // 
-            // materialLabel3
+            // totalWeight
             // 
-            this.materialLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.totalWeight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(345, 207);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(53, 19);
-            this.materialLabel3.TabIndex = 8;
-            this.materialLabel3.Text = "총 무게 : ";
+            this.totalWeight.AutoSize = true;
+            this.totalWeight.Depth = 0;
+            this.totalWeight.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.totalWeight.Location = new System.Drawing.Point(345, 207);
+            this.totalWeight.MouseState = MaterialSkin.MouseState.HOVER;
+            this.totalWeight.Name = "totalWeight";
+            this.totalWeight.Size = new System.Drawing.Size(53, 19);
+            this.totalWeight.TabIndex = 8;
+            this.totalWeight.Text = "총 무게 : ";
             // 
-            // materialLabel4
+            // partCount
             // 
-            this.materialLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.partCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(345, 254);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(65, 19);
-            this.materialLabel4.TabIndex = 9;
-            this.materialLabel4.Text = "운동 부위 : ";
+            this.partCount.AutoSize = true;
+            this.partCount.Depth = 0;
+            this.partCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.partCount.Location = new System.Drawing.Point(345, 254);
+            this.partCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.partCount.Name = "partCount";
+            this.partCount.Size = new System.Drawing.Size(65, 19);
+            this.partCount.TabIndex = 9;
+            this.partCount.Text = "운동 부위 : ";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 328);
-            this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.everySetCount);
-            this.Controls.Add(this.todayRoutineCount);
+            this.Controls.Add(this.partCount);
+            this.Controls.Add(this.totalWeight);
+            this.Controls.Add(this.totalSet);
+            this.Controls.Add(this.todayTotalCount);
             this.Controls.Add(this.routineName);
             this.Controls.Add(this.routineList);
             this.Controls.Add(this.btnDelete);
@@ -191,10 +191,10 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView routineList;
         private System.Windows.Forms.Label routineName;
-        private MaterialSkin.Controls.MaterialLabel todayRoutineCount;
-        private MaterialSkin.Controls.MaterialLabel everySetCount;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel todayTotalCount;
+        private MaterialSkin.Controls.MaterialLabel totalSet;
+        private MaterialSkin.Controls.MaterialLabel totalWeight;
+        private MaterialSkin.Controls.MaterialLabel partCount;
     }
 }
 

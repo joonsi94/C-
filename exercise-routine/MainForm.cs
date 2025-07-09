@@ -30,10 +30,34 @@ namespace exercise_routine
             routineList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             routineList.MultiSelect = false;
         }
+        private void UpdateStatistics()
+        {
+            var today = DateTime.Today;
+            var todayWorkouts = workouts.Where(w => w.Date.Date == today).ToList();
+
+            int totalCount = todayWorkouts.Count;
+            int totalSets = todayWorkouts.Sum(w => w.Sets);
+            float totalWeight = todayWorkouts.Sum(w => w.Sets * w.Weight);
+
+            // 부위별 개수
+            var partGroups = todayWorkouts
+                .GroupBy(w => w.Part)
+                .Select(g => $"{g.Key}: {g.Count()}");
+
+            string partText = string.Join(", ", partGroups);
+
+            // Label 업데이트
+            totalCount.Text = $"오늘 루틴 수: {totalCount}개";
+            totalSets.Text = $"총 세트 수: {totalSets}세트";
+            totalWeight.Text = $"총 무게: {totalWeight}kg";
+            partCount.Text = $"운동 부위: {partText}";
+        }
         private void RefreshGrid()
         {
             routineList.DataSource = null;
             routineList.DataSource = workouts;
+
+            UpdateStatistics();
         }
 
 
