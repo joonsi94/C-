@@ -34,10 +34,13 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.routineList = new System.Windows.Forms.DataGridView();
             this.routineName = new System.Windows.Forms.Label();
-            this.todayTotalCount = new MaterialSkin.Controls.MaterialLabel();
-            this.totalSet = new MaterialSkin.Controls.MaterialLabel();
-            this.totalWeight = new MaterialSkin.Controls.MaterialLabel();
-            this.partCount = new MaterialSkin.Controls.MaterialLabel();
+            this.labelTotalCount = new MaterialSkin.Controls.MaterialLabel();
+            this.labelTotalSets = new MaterialSkin.Controls.MaterialLabel();
+            this.labelTotalWeight = new MaterialSkin.Controls.MaterialLabel();
+            this.labelPartCount = new MaterialSkin.Controls.MaterialLabel();
+            this.checkShowAll = new System.Windows.Forms.CheckBox();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.routineList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,11 +51,12 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(173, 21);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnCreate
             // 
             this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCreate.Location = new System.Drawing.Point(56, 293);
+            this.btnCreate.Location = new System.Drawing.Point(56, 297);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 1;
@@ -63,7 +67,7 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEdit.Location = new System.Drawing.Point(192, 293);
+            this.btnEdit.Location = new System.Drawing.Point(160, 297);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 2;
@@ -74,7 +78,7 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(324, 293);
+            this.btnDelete.Location = new System.Drawing.Point(258, 297);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 3;
@@ -91,7 +95,7 @@
             this.routineList.Location = new System.Drawing.Point(56, 105);
             this.routineList.Name = "routineList";
             this.routineList.RowTemplate.Height = 23;
-            this.routineList.Size = new System.Drawing.Size(277, 168);
+            this.routineList.Size = new System.Drawing.Size(277, 172);
             this.routineList.TabIndex = 4;
             // 
             // routineName
@@ -104,71 +108,102 @@
             this.routineName.TabIndex = 5;
             this.routineName.Text = "운동루틴목록";
             // 
-            // todayTotalCount
+            // labelTotalCount
             // 
-            this.todayTotalCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.todayTotalCount.AutoSize = true;
-            this.todayTotalCount.Depth = 0;
-            this.todayTotalCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.todayTotalCount.Location = new System.Drawing.Point(345, 105);
-            this.todayTotalCount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.todayTotalCount.Name = "todayTotalCount";
-            this.todayTotalCount.Size = new System.Drawing.Size(81, 19);
-            this.todayTotalCount.TabIndex = 6;
-            this.todayTotalCount.Text = "오늘 루틴 수 : ";
+            this.labelTotalCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalCount.AutoSize = true;
+            this.labelTotalCount.Depth = 0;
+            this.labelTotalCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelTotalCount.Location = new System.Drawing.Point(345, 105);
+            this.labelTotalCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelTotalCount.Name = "labelTotalCount";
+            this.labelTotalCount.Size = new System.Drawing.Size(81, 19);
+            this.labelTotalCount.TabIndex = 6;
+            this.labelTotalCount.Text = "오늘 루틴 수 : ";
             // 
-            // totalSet
+            // labelTotalSets
             // 
-            this.totalSet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalSet.AutoSize = true;
-            this.totalSet.Depth = 0;
-            this.totalSet.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.totalSet.Location = new System.Drawing.Point(345, 154);
-            this.totalSet.MouseState = MaterialSkin.MouseState.HOVER;
-            this.totalSet.Name = "totalSet";
-            this.totalSet.Size = new System.Drawing.Size(69, 19);
-            this.totalSet.TabIndex = 7;
-            this.totalSet.Text = "총 세트 수 : ";
+            this.labelTotalSets.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelTotalSets.AutoSize = true;
+            this.labelTotalSets.Depth = 0;
+            this.labelTotalSets.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelTotalSets.Location = new System.Drawing.Point(345, 156);
+            this.labelTotalSets.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelTotalSets.Name = "labelTotalSets";
+            this.labelTotalSets.Size = new System.Drawing.Size(69, 19);
+            this.labelTotalSets.TabIndex = 7;
+            this.labelTotalSets.Text = "총 세트 수 : ";
             // 
-            // totalWeight
+            // labelTotalWeight
             // 
-            this.totalWeight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalWeight.AutoSize = true;
-            this.totalWeight.Depth = 0;
-            this.totalWeight.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.totalWeight.Location = new System.Drawing.Point(345, 207);
-            this.totalWeight.MouseState = MaterialSkin.MouseState.HOVER;
-            this.totalWeight.Name = "totalWeight";
-            this.totalWeight.Size = new System.Drawing.Size(53, 19);
-            this.totalWeight.TabIndex = 8;
-            this.totalWeight.Text = "총 무게 : ";
+            this.labelTotalWeight.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelTotalWeight.AutoSize = true;
+            this.labelTotalWeight.Depth = 0;
+            this.labelTotalWeight.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelTotalWeight.Location = new System.Drawing.Point(345, 209);
+            this.labelTotalWeight.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelTotalWeight.Name = "labelTotalWeight";
+            this.labelTotalWeight.Size = new System.Drawing.Size(53, 19);
+            this.labelTotalWeight.TabIndex = 8;
+            this.labelTotalWeight.Text = "총 무게 : ";
             // 
-            // partCount
+            // labelPartCount
             // 
-            this.partCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.partCount.AutoSize = true;
-            this.partCount.Depth = 0;
-            this.partCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.partCount.Location = new System.Drawing.Point(345, 254);
-            this.partCount.MouseState = MaterialSkin.MouseState.HOVER;
-            this.partCount.Name = "partCount";
-            this.partCount.Size = new System.Drawing.Size(65, 19);
-            this.partCount.TabIndex = 9;
-            this.partCount.Text = "운동 부위 : ";
+            this.labelPartCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPartCount.AutoSize = true;
+            this.labelPartCount.Depth = 0;
+            this.labelPartCount.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelPartCount.Location = new System.Drawing.Point(345, 258);
+            this.labelPartCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelPartCount.Name = "labelPartCount";
+            this.labelPartCount.Size = new System.Drawing.Size(65, 19);
+            this.labelPartCount.TabIndex = 9;
+            this.labelPartCount.Text = "운동 부위 : ";
+            // 
+            // checkShowAll
+            // 
+            this.checkShowAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkShowAll.AutoSize = true;
+            this.checkShowAll.Location = new System.Drawing.Point(348, 80);
+            this.checkShowAll.Name = "checkShowAll";
+            this.checkShowAll.Size = new System.Drawing.Size(72, 16);
+            this.checkShowAll.TabIndex = 10;
+            this.checkShowAll.Text = "전체보기";
+            this.checkShowAll.UseVisualStyleBackColor = true;
+            this.checkShowAll.CheckedChanged += new System.EventHandler(this.checkShowAll_CheckedChanged);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(339, 281);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 11;
+            this.btnExport.Text = "CSV 저장";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(339, 306);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Excel 저장";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 328);
-            this.Controls.Add(this.partCount);
-            this.Controls.Add(this.totalWeight);
-            this.Controls.Add(this.totalSet);
-            this.Controls.Add(this.todayTotalCount);
+            this.ClientSize = new System.Drawing.Size(462, 332);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.checkShowAll);
+            this.Controls.Add(this.labelPartCount);
+            this.Controls.Add(this.labelTotalWeight);
+            this.Controls.Add(this.labelTotalSets);
+            this.Controls.Add(this.labelTotalCount);
             this.Controls.Add(this.routineName);
             this.Controls.Add(this.routineList);
             this.Controls.Add(this.btnDelete);
@@ -191,10 +226,13 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView routineList;
         private System.Windows.Forms.Label routineName;
-        private MaterialSkin.Controls.MaterialLabel todayTotalCount;
-        private MaterialSkin.Controls.MaterialLabel totalSet;
-        private MaterialSkin.Controls.MaterialLabel totalWeight;
-        private MaterialSkin.Controls.MaterialLabel partCount;
+        private MaterialSkin.Controls.MaterialLabel labelTotalCount;
+        private MaterialSkin.Controls.MaterialLabel labelTotalSets;
+        private MaterialSkin.Controls.MaterialLabel labelTotalWeight;
+        private MaterialSkin.Controls.MaterialLabel labelPartCount;
+        private System.Windows.Forms.CheckBox checkShowAll;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button button1;
     }
 }
 
