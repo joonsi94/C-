@@ -43,3 +43,5 @@ E:\C#\exercise-routine\bin\Debug\System.Buffers.xml
 E:\C#\exercise-routine\bin\Debug\System.Memory.xml
 E:\C#\exercise-routine\bin\Debug\System.Numerics.Vectors.xml
 E:\C#\exercise-routine\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\C#\exercise-routine\bin\Debug\Newtonsoft.Json.dll
+E:\C#\exercise-routine\bin\Debug\Newtonsoft.Json.xml

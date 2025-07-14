@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|e:\\c#\\exercise-routine\\workout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|E:\\C#\\exercise-routine\\workout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\workout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -46,8 +46,8 @@
               "Title": "mainForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.cs",
-              "ToolTip": "E:\\C#\\exercise-routine\\MainForm.cs [\uB514\uC790\uC778]*",
-              "RelativeToolTip": "exercise-routine\\MainForm.cs [\uB514\uC790\uC778]*",
+              "ToolTip": "E:\\C#\\exercise-routine\\MainForm.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "exercise-routine\\MainForm.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T07:45:03.897Z",
               "IsPinned": true,
@@ -65,19 +65,6 @@
               "WhenOpened": "2025-07-03T08:12:09.642Z",
               "IsPinned": true,
               "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Workout.cs",
-              "DocumentMoniker": "E:\\C#\\exercise-routine\\Workout.cs",
-              "RelativeDocumentMoniker": "exercise-routine\\Workout.cs",
-              "ToolTip": "E:\\C#\\exercise-routine\\Workout.cs",
-              "RelativeToolTip": "exercise-routine\\Workout.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T09:01:53.311Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -102,11 +89,24 @@
               "Title": "mainForm.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.cs",
-              "ToolTip": "E:\\C#\\exercise-routine\\MainForm.cs*",
-              "RelativeToolTip": "exercise-routine\\MainForm.cs*",
-              "ViewState": "AgIAANwAAAAAAAAAAAAqwAMBAAAAAAAAAAAAAA==",
+              "ToolTip": "E:\\C#\\exercise-routine\\MainForm.cs",
+              "RelativeToolTip": "exercise-routine\\MainForm.cs",
+              "ViewState": "AgIAADwBAAAAAAAAAADwv08BAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T07:48:29.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Workout.cs",
+              "DocumentMoniker": "E:\\C#\\exercise-routine\\Workout.cs",
+              "RelativeDocumentMoniker": "exercise-routine\\Workout.cs",
+              "ToolTip": "E:\\C#\\exercise-routine\\Workout.cs",
+              "RelativeToolTip": "exercise-routine\\Workout.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T09:01:53.311Z",
               "EditorCaption": ""
             },
             {

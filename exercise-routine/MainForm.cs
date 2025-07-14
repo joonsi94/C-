@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using MaterialSkin;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace exercise_routine
 {
-    
+
 
     public partial class MainForm : MaterialSkin.Controls.MaterialForm
     {
@@ -31,9 +32,74 @@ namespace exercise_routine
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             return client;
         }
+        public async Task AddWorkoutAsync(Workout w)
+        {
+            var client = GetHttpClient();
+            var data = new[]
+            {
+        new {
+            date = w.Date.ToString("yyyy-MM-dd"),
+            exercisename = w.ExerciseName,
+            part = w.Part,
+            sets = w.Sets,
+            reps = w.Reps,
+            weight = w.Weight,
+            memo = w.Memo
+        }
+    };
+
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(table, content);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task<List<Workout>> GetWorkoutsAsync()
+        {
+            var client = GetHttpClient();
+            var response = await client.GetAsync($"{table}?select=*");
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+            var list = JsonConvert.DeserializeObject<List<Workout>>(json);
+            return list ?? new List<Workout>();
+        }
+
+        public async Task UpdateWorkoutAsync(Workout w)
+        {
+            var client = GetHttpClient();
+
+            var data = new
+            {
+                date = w.Date.ToString("yyyy-MM-dd"),
+                exercisename = w.ExerciseName,
+                part = w.Part,
+                sets = w.Sets,
+                reps = w.Reps,
+                weight = w.Weight,
+                memo = w.Memo
+            };
+
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            // primary key 기준으로 update (id로 WHERE 조건)
+            var response = await client.PatchAsync($"{table}?id=eq.{w.Id}", content);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteWorkoutAsync(long id)
+        {
+            var client = GetHttpClient();
+            var response = await client.DeleteAsync($"{table}?id=eq.{id}");
+            response.EnsureSuccessStatusCode();
+        }
+
+
         public MainForm()
         {
-            InitializeComponent(); 
+            InitializeComponent();
 
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
@@ -257,57 +323,16 @@ namespace exercise_routine
         {
             ExportToExcel();
         }
-        private async Task<List<Workout>> GetWorkoutsFromSupabaseAsync()
-        {
-            var client = GetHttpClient();
-            var response = await client.GetAsync($"{table}?select=*");
-            response.EnsureSuccessStatusCode();
-            var json = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<List<Workout>>(json) ?? new();
-        }
-
-        private async Task AddWorkoutToSupabaseAsync(Workout w)
-        {
-            var client = GetHttpClient();
-            var json = JsonSerializer.Serialize(new[] {
-        new {
-            date = w.Date.ToString("yyyy-MM-dd"),
-            exercisename = w.ExerciseName,
-            part = w.Part,
-            sets = w.Sets,
-            reps = w.Reps,
-            weight = w.Weight,
-            memo = w.Memo
-        }
-    });
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync(table, content);
-            response.EnsureSuccessStatusCode();
-        }
-
-        private async Task UpdateWorkoutToSupabaseAsync(Workout w)
-        {
-            var client = GetHttpClient();
-            var json = JsonSerializer.Serialize(new
-            {
-                date = w.Date.ToString("yyyy-MM-dd"),
-                exercisename = w.ExerciseName,
-                part = w.Part,
-                sets = w.Sets,
-                reps = w.Reps,
-                weight = w.Weight,
-                memo = w.Memo
-            });
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PatchAsync($"{table}?id=eq.{w.Id}", content);
-            response.EnsureSuccessStatusCode();
-        }
-
-        private async Task DeleteWorkoutFromSupabaseAsync(long id)
-        {
-            var client = GetHttpClient();
-            var response = await client.DeleteAsync($"{table}?id=eq.{id}");
-            response.EnsureSuccessStatusCode();
-        }
     }
+        public static class HttpClientExtensions
+        {
+            public static async Task<HttpResponseMessage> PatchAsync(this HttpClient client, string requestUri, HttpContent content)
+            {
+                var request = new HttpRequestMessage(new HttpMethod("PATCH"), requestUri)
+                {
+                    Content = content
+                };
+                return await client.SendAsync(request);
+            }
+        }
 }
