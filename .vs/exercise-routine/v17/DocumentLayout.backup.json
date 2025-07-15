@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\C#\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}|\uC194\uB8E8\uC158 \uD56D\uBAA9{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}|E:\\C#\\TextFile1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}|\uC194\uB8E8\uC158 \uD56D\uBAA9{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}|solutionrelative:TextFile1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|e:\\c#\\exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0BABFA7-A60C-4779-B13D-23E3306384CF}|exercise-routine\\exercise-routineApp.csproj|solutionrelative:exercise-routine\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "mainForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.cs",
@@ -55,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AddEditForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\AddEditForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\AddEditForm.cs",
@@ -63,8 +67,20 @@
               "RelativeToolTip": "exercise-routine\\AddEditForm.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T08:12:09.642Z",
-              "IsPinned": true,
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TextFile1.txt",
+              "DocumentMoniker": "E:\\C#\\TextFile1.txt",
+              "RelativeDocumentMoniker": "TextFile1.txt",
+              "ToolTip": "E:\\C#\\TextFile1.txt",
+              "RelativeToolTip": "TextFile1.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-07-15T07:08:10.258Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -72,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AddEditForm.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\AddEditForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\AddEditForm.cs",
@@ -80,25 +96,24 @@
               "RelativeToolTip": "exercise-routine\\AddEditForm.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAAUwJQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T08:22:37.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T08:22:37.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "mainForm.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.cs",
               "ToolTip": "E:\\C#\\exercise-routine\\MainForm.cs",
               "RelativeToolTip": "exercise-routine\\MainForm.cs",
-              "ViewState": "AgIAADwBAAAAAAAAAADwv08BAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADwBAAAAAAAAAADwv0cBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-03T07:48:29.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Workout.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\Workout.cs",
               "RelativeDocumentMoniker": "exercise-routine\\Workout.cs",
@@ -106,12 +121,11 @@
               "RelativeToolTip": "exercise-routine\\Workout.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T09:01:53.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T09:01:53.311Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "mainForm.Designer.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "exercise-routine\\MainForm.Designer.cs",
@@ -119,12 +133,11 @@
               "RelativeToolTip": "exercise-routine\\MainForm.Designer.cs",
               "ViewState": "AgIAAJcAAAAAAAAAAAAIwK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T09:05:31.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T09:05:31.787Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AddEditForm.Designer.cs",
               "DocumentMoniker": "E:\\C#\\exercise-routine\\AddEditForm.Designer.cs",
               "RelativeDocumentMoniker": "exercise-routine\\AddEditForm.Designer.cs",
@@ -132,8 +145,7 @@
               "RelativeToolTip": "exercise-routine\\AddEditForm.Designer.cs",
               "ViewState": "AgIAAFEAAAAAAAAAAAAcwGoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T07:29:17.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-07T07:29:17.737Z"
             }
           ]
         }

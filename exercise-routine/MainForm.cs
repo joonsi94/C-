@@ -22,7 +22,7 @@ namespace exercise_routine
         private List<Workout> workouts = new List<Workout>();
         private readonly string supabaseUrl = "https://knncxyddfucyzimwfkoj.supabase.co";
         private readonly string supabaseApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtubmN4eWRkZnVjeXppbXdma29qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk0MjQ3NzUsImV4cCI6MjA1NTAwMDc3NX0.Y4rkdOA3kidzoZgm-nxNfX2pHVAv74AautTtPhTmUdM";
-        private readonly string table = "Excercise";
+        private readonly string table = "excercise";
         private HttpClient GetHttpClient()
         {
             var client = new HttpClient();
