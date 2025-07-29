@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\exercise-routine"
+    "\\exercise-routine",
+    "\\exercise-routine\\exercise-routine\\bin\\Release",
+    "\\exercise-routine\\exercise-routine\\obj\\Debug\\TempPE",
+    "\\exercise-routine\\packages\\MaterialSkin.2.2.3.1",
+    "\\exercise-routine\\Properties"
   ],
-  "SelectedNode": "\\exercise-routine\\MainForm.cs",
+  "SelectedNode": "\\exercise-routine\\bin",
   "PreviewInSolutionExplorer": false
 }

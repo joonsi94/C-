@@ -17,11 +17,16 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+.vs/
+bin/
+obj/
+*.user
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.db
 
 .env
 .vercel
