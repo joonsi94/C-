@@ -12,6 +12,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace exercise_routine
 {
@@ -20,87 +21,127 @@ namespace exercise_routine
     public partial class MainForm : MaterialSkin.Controls.MaterialForm
     {
         private List<Workout> workouts = new List<Workout>();
-        private readonly string supabaseUrl = "https://knncxyddfucyzimwfkoj.supabase.co";
-        private readonly string supabaseApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtubmN4eWRkZnVjeXppbXdma29qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk0MjQ3NzUsImV4cCI6MjA1NTAwMDc3NX0.Y4rkdOA3kidzoZgm-nxNfX2pHVAv74AautTtPhTmUdM";
-        private readonly string table = "excercise";
-        private HttpClient GetHttpClient()
+        private readonly ExerciseRepository _repo;
+        private readonly string _cs = "Server=DESKTOP-6VSVCKC\\JSTESTSERVER;Database=exercise;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+
+        public class ExerciseRepository
         {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri($"{supabaseUrl}/rest/v1/");
-            client.DefaultRequestHeaders.Add("apikey", supabaseApiKey);
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {supabaseApiKey}");
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            return client;
-        }
-        public async Task AddWorkoutAsync(Workout w)
-        {
-            var client = GetHttpClient();
-            var data = new[]
+            private readonly string _cs;
+            public ExerciseRepository(string connectionString) => _cs = connectionString;
+
+            public List<Workout> GetAll()
             {
-        new {
-            date = w.Date.ToString("yyyy-MM-dd"),
-            exercisename = w.ExerciseName,
-            part = w.Part,
-            sets = w.Sets,
-            reps = w.Reps,
-            weight = w.Weight,
-            memo = w.Memo
-        }
-    };
+                var list = new List<Workout>();
+                using (var con = new SqlConnection(_cs))
+                using (var cmd = new SqlCommand(@"
+                SELECT Id, [Date], ExerciseName, Part, Sets, Reps, Weight, Memo
+                FROM dbo.Exercise
+                ORDER BY [Date] DESC, Id DESC", con))
+                {
+                    con.Open();
+                    using (var rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            list.Add(new Workout
+                            {
+                                Id = rd.GetInt64(0),
+                                Date = rd.GetDateTime(1),
+                                ExerciseName = rd.IsDBNull(2) ? "" : rd.GetString(2),
+                                Part = rd.IsDBNull(3) ? "" : rd.GetString(3),
+                                Sets = rd.IsDBNull(4) ? 0 : rd.GetInt32(4),
+                                Reps = rd.IsDBNull(5) ? 0 : rd.GetInt32(5),
+                                Weight = rd.IsDBNull(6) ? 0f : Convert.ToSingle(rd.GetDouble(6)),
+                                Memo = rd.IsDBNull(7) ? "" : rd.GetString(7)
+                            });
+                        }
+                    }
+                }
+                return list;
+            }
 
-            var json = JsonConvert.SerializeObject(data);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(table, content);
-            response.EnsureSuccessStatusCode();
-        }
-
-        public async Task<List<Workout>> GetWorkoutsAsync()
-        {
-            var client = GetHttpClient();
-            var response = await client.GetAsync($"{table}?select=*");
-            response.EnsureSuccessStatusCode();
-
-            var json = await response.Content.ReadAsStringAsync();
-            var list = JsonConvert.DeserializeObject<List<Workout>>(json);
-            return list ?? new List<Workout>();
-        }
-
-        public async Task UpdateWorkoutAsync(Workout w)
-        {
-            var client = GetHttpClient();
-
-            var data = new
+            public long Insert(Workout w)
             {
-                date = w.Date.ToString("yyyy-MM-dd"),
-                exercisename = w.ExerciseName,
-                part = w.Part,
-                sets = w.Sets,
-                reps = w.Reps,
-                weight = w.Weight,
-                memo = w.Memo
-            };
+                using (var con = new SqlConnection(_cs))
+                using (var cmd = new SqlCommand(@"
+                INSERT INTO dbo.Exercise([Date], ExerciseName, Part, Sets, Reps, Weight, Memo)
+                OUTPUT INSERTED.Id
+                VALUES(@Date, @ExerciseName, @Part, @Sets, @Reps, @Weight, @Memo)", con))
+                {
+                    cmd.Parameters.AddWithValue("@Date", w.Date.Date);
+                    cmd.Parameters.AddWithValue("@ExerciseName", (object)w.ExerciseName ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Part", (object)w.Part ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Sets", w.Sets);
+                    cmd.Parameters.AddWithValue("@Reps", w.Reps);
+                    cmd.Parameters.AddWithValue("@Weight", w.Weight);
+                    cmd.Parameters.AddWithValue("@Memo", (object)w.Memo ?? DBNull.Value);
 
-            var json = JsonConvert.SerializeObject(data);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    con.Open();
+                    return (long)cmd.ExecuteScalar();
+                }
+            }
 
-            // primary key 기준으로 update (id로 WHERE 조건)
-            var response = await client.PatchAsync($"{table}?id=eq.{w.Id}", content);
-            response.EnsureSuccessStatusCode();
+            public void Update(Workout w)
+            {
+                using (var con = new SqlConnection(_cs))
+                using (var cmd = new SqlCommand(@"
+                UPDATE dbo.Exercise
+                SET [Date]=@Date, ExerciseName=@ExerciseName, Part=@Part, Sets=@Sets, Reps=@Reps, Weight=@Weight, Memo=@Memo
+                WHERE Id=@Id", con))
+                {
+                    cmd.Parameters.AddWithValue("@Id", w.Id);
+                    cmd.Parameters.AddWithValue("@Date", w.Date.Date);
+                    cmd.Parameters.AddWithValue("@ExerciseName", (object)w.ExerciseName ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Part", (object)w.Part ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Sets", w.Sets);
+                    cmd.Parameters.AddWithValue("@Reps", w.Reps);
+                    cmd.Parameters.AddWithValue("@Weight", w.Weight);
+                    cmd.Parameters.AddWithValue("@Memo", (object)w.Memo ?? DBNull.Value);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            public void Delete(long id)
+            {
+                using (var con = new SqlConnection(_cs))
+                using (var cmd = new SqlCommand("DELETE FROM dbo.Exercise WHERE Id=@Id", con))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
-        public async Task DeleteWorkoutAsync(long id)
-        {
-            var client = GetHttpClient();
-            var response = await client.DeleteAsync($"{table}?id=eq.{id}");
-            response.EnsureSuccessStatusCode();
-        }
+        //class DbConnector
+        //{
+        //    public static string ConnectionString = "Server=localhost;Database=DESKTOP-6VSVCKC\\JSTESTSERVER;";
+        //    public void Connect()
+        //    {
+        //        using (SqlConnection connection = new SqlConnection(ConnectionString))
+        //        {
+        //            try
+        //            {
+        //                //DB 서버 접속 시작
+        //                connection.Open();
+        //                MessageBox.Show("DB 연결 성공!");
+        //            }
+        //            catch (Exception ex) //DB 서버 접속 실패
+        //            {
+        //                MessageBox.Show("DB 연결 실패: " + ex.Message);
+        //            }
 
+        //            //DB 서버 접속 종료
+        //            connection.Close();
+        //        }
+        //    }
+        //}
 
         public MainForm()
         {
             InitializeComponent();
-
             var skinManager = MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
             skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -112,7 +153,12 @@ namespace exercise_routine
 
             routineList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             routineList.MultiSelect = false;
+
+            _repo = new ExerciseRepository(_cs);
+            workouts = _repo.GetAll(); // 최초 로드
+            RefreshGrid();             // 그리드 최신화
         }
+
         private void UpdateStatistics(List<Workout> filteredList)
         {
             int totalCount = filteredList.Count;
@@ -122,7 +168,7 @@ namespace exercise_routine
             // 부위별 개수
             var partGroups = filteredList
                 .GroupBy(w => w.Part)
-                .Select(g => $"{g.Key}: {g.Count()}");
+                .Select(g => $"{g.Key}");
 
             string partText = string.Join(", ", partGroups);
 
@@ -160,14 +206,20 @@ namespace exercise_routine
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            AddEditForm form = new AddEditForm();
-            if (form.ShowDialog() == DialogResult.OK)
+            using (var form = new AddEditForm())
             {
-                workouts.Add(form.WorkoutResult);
-                RefreshGrid();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    // DB 저장
+                    var id = _repo.Insert(form.WorkoutResult);
+                    // 메모리 갱신 (전체 다시 로드 또는 단건 추가)
+                    workouts = _repo.GetAll();
+                    RefreshGrid();
+                }
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e) // 수정
         {
             if (routineList.SelectedRows.Count == 0)
             {
@@ -175,19 +227,24 @@ namespace exercise_routine
                 return;
             }
 
-            int selectedIndex = routineList.SelectedRows[0].Index;
-            if (selectedIndex < 0 || selectedIndex >= workouts.Count) return;
+            var selected = routineList.SelectedRows[0].DataBoundItem as Workout;
+            if (selected == null) return;
 
-            Workout selectedWorkout = workouts[selectedIndex];
-
-            // 수정용 생성자 호출
-            AddEditForm form = new AddEditForm(selectedWorkout);
-            if (form.ShowDialog() == DialogResult.OK)
+            using (var form = new AddEditForm(selected))
             {
-                workouts[selectedIndex] = form.WorkoutResult;
-                RefreshGrid();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    var edited = form.WorkoutResult;
+                    edited.Id = selected.Id; // 기존 Id 유지
+                    _repo.Update(edited);
+
+                    // 다시 로드
+                    workouts = _repo.GetAll();
+                    RefreshGrid();
+                }
             }
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -197,14 +254,14 @@ namespace exercise_routine
                 return;
             }
 
-            int selectedIndex = routineList.SelectedRows[0].Index;
-            if (selectedIndex < 0 || selectedIndex >= workouts.Count) return;
+            var selected = routineList.SelectedRows[0].DataBoundItem as Workout;
+            if (selected == null) return;
 
-            // 사용자에게 확인받기
             var result = MessageBox.Show("정말 삭제하시겠습니까?", "확인", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                workouts.RemoveAt(selectedIndex);
+                _repo.Delete(selected.Id);
+                workouts = _repo.GetAll();
                 RefreshGrid();
                 MessageBox.Show("삭제되었습니다.");
             }

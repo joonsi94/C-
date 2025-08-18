@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Properties"
   ],
-  "SelectedNode": "\\exercise-routine.sln",
+  "SelectedNode": "\\MainForm.cs",
   "PreviewInSolutionExplorer": false
 }

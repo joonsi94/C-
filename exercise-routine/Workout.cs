@@ -8,7 +8,7 @@ namespace exercise_routine
 {
     public class Workout
     {
-        public int Id { get; set; } // DB 연동 시 Primary Key 역할
+        public long Id { get; set; } // DB 연동 시 Primary Key 역할
         public DateTime Date { get; set; }
         public string ExerciseName { get; set; }
         public string Part { get; set; } // 부위: 가슴, 등 등
