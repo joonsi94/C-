@@ -18,52 +18,6 @@ namespace exercise_routine
 {
     public partial class AddEditForm : MaterialSkin.Controls.MaterialForm
     {
-        //private List<Workout> workouts = new List<Workout>();
-        //private readonly string supabaseUrl = "https://knncxyddfucyzimwfkoj.supabase.co";
-        //private readonly string supabaseApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtubmN4eWRkZnVjeXppbXdma29qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk0MjQ3NzUsImV4cCI6MjA1NTAwMDc3NX0.Y4rkdOA3kidzoZgm-nxNfX2pHVAv74AautTtPhTmUdM";
-        //private readonly string table = "excercise";
-        //private HttpClient GetHttpClient()
-        //{
-        //    var client = new HttpClient();
-        //    client.BaseAddress = new Uri($"{supabaseUrl}/rest/v1/");
-        //    client.DefaultRequestHeaders.Add("apikey", supabaseApiKey);
-        //    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {supabaseApiKey}");
-        //    client.DefaultRequestHeaders.Add("Accept", "application/json");
-        //    return client;
-        //}
-        //public async Task<List<Workout>> GetWorkoutsAsync()
-        //{
-        //    var client = GetHttpClient();
-        //    var response = await client.GetAsync($"{table}?select=*");
-        //    response.EnsureSuccessStatusCode();
-
-        //    var json = await response.Content.ReadAsStringAsync();
-        //    var list = JsonConvert.DeserializeObject<List<Workout>>(json);
-        //    return list ?? new List<Workout>();
-        //}
-        class DbConnector
-        {
-            public static string ConnectionString = "Server=localhost;Database=DESKTOP-6VSVCKC\\JSTESTSERVER;";
-            public void Connect()
-            {
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
-                {
-                    try
-                    {
-                        //DB 서버 접속 시작
-                        connection.Open();
-                        MessageBox.Show("DB 연결 성공!");
-                    }
-                    catch (Exception ex) //DB 서버 접속 실패
-                    {
-                        MessageBox.Show("DB 연결 실패: " + ex.Message);
-                    }
-
-                    //DB 서버 접속 종료
-                    connection.Close();
-                }
-            }
-        }
         public Workout WorkoutResult { get; private set; }
         public AddEditForm()
         {
